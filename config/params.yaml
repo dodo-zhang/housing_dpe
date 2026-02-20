@@ -1,0 +1,6 @@
+seed: 123
+n_rows: 5000
+
+model:
+  formula: "y ~ treat + x + C(year)"
+  cov_type: "cluster"   # cluster-robust SE
