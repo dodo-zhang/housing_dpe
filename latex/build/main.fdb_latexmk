@@ -1,0 +1,23 @@
+# Fdb version 4
+["pdflatex"] 1771601628.81179 "/home/dodo/projects/housing_dpe/latex/main.tex" "build/main.pdf" "main" 1771601629.20986 0
+  "/etc/texmf/web2c/texmf.cnf" 1771599704.83394 475 c0e671620eb5563b2130f56340a5fde8 ""
+  "/home/dodo/projects/housing_dpe/latex/main.tex" 1771600196.58017 100 0e918acd347175e4cffccc08dd6b43f6 ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/base/article.cls" 1705352648 20144 147463a6a579f4597269ef9565205cfe ""
+  "/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo" 1705352648 8448 dbc0dbf4156c0bb9ba01a1c685d3bad0 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def" 1704491087 30006 57b07afb710ee2f649c65cfbafda39c1 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty" 1705955748 6565 cfd9fd0a1d5f5ad985151778771ff7a9 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty" 1696969620 4674 15ab6bdfc97f65b00e59c2867851f715 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex" 1632168149 95525 6fd0552101a6b1f9b7a84b402ec435ba ""
+  "/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.sty" 1632168149 14690 c2c754218a7108db7823a4839c1bc3cd ""
+  "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
+  "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
+  "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1771599732.92481 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
+  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1771599876 8213083 4c933e6886c1c4dbe20fbba078787a48 ""
+  "build/main.aux" 1771601629.15936 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "main.tex" 1771600196.58017 100 0e918acd347175e4cffccc08dd6b43f6 ""
+  (generated)
+  "build/main.aux"
+  "build/main.log"
+  "build/main.pdf"
+  (rewritten before read)
