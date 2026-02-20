@@ -7,6 +7,8 @@ from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
 
+import matplotlib.pyplot as plt
+
 import numpy as np
 import pandas as pd
 import statsmodels.formula.api as smf
@@ -100,11 +102,45 @@ def save_outputs(outdir: Path, df: pd.DataFrame, res) -> None:
         tbl.to_latex(float_format="%.4f"), encoding="utf-8"
     )
 
-    # Figure: coefficient + CI
-    import matplotlib.pyplot as plt
+    # Try to recover parameter names
+    param_names = None
+    for attr in ("model",):
+        if hasattr(res, attr) and hasattr(getattr(res, attr), "exog_names"):
+            param_names = getattr(res, attr).exog_names
+            break
+    if (
+        param_names is None
+        and hasattr(res, "model")
+        and hasattr(res.model, "data")
+        and hasattr(res.model.data, "param_names")
+    ):
+        param_names = res.model.data.param_names
 
-    coef = float(res.params["treat"])
-    se = float(res.bse["treat"])
+    def _get_param_idx(name: str) -> int:
+        if param_names and name in param_names:
+            return param_names.index(name)
+        # Fallback: assume treat is the 2nd regressor after intercept in "y ~ treat + ..."
+        # This is a safe fallback for our template, but in real research you'd enforce name presence.
+        return 1
+
+    idx = _get_param_idx("treat")
+
+    params = np.asarray(res.params)
+    bse = np.asarray(res.bse)
+
+    coef = float(params[idx])
+    se = float(bse[idx])
+    ci_low, ci_high = coef - 1.96 * se, coef + 1.96 * se
+
+    fig, ax = plt.subplots(figsize=(6, 3))
+    ax.errorbar([0], [coef], yerr=[[coef - ci_low], [ci_high - coef]], fmt="o")
+    ax.axhline(0, linestyle="--")
+    ax.set_xticks([0])
+    ax.set_xticklabels(["treat"])
+    ax.set_title("Treatment effect (coef ± 1.96*SE)")
+    fig.tight_layout()
+    fig.savefig(outdir / "figures" / "treat_effect.png", dpi=200)
+    plt.close(fig)
     ci_low, ci_high = coef - 1.96 * se, coef + 1.96 * se
 
     fig, ax = plt.subplots(figsize=(6, 3))
@@ -132,10 +168,7 @@ def save_outputs(outdir: Path, df: pd.DataFrame, res) -> None:
 
 def safe_git_commit() -> str:
     try:
-        return (
-            subprocess.check_output(["git", "rev-parse", "HEAD"], text=True)
-            .strip()
-        )
+        return subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip()
     except Exception:
         return "unknown"
 

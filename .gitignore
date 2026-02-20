@@ -10,3 +10,11 @@ __pycache__/
 # OS/editor
 .vscode/
 .DS_Store
+
+# latex
+latex/build/
+latex/*.aux
+latex/*.log
+latex/*.fls
+latex/*.fdb_latexmk
+latex/*.synctex.gz
