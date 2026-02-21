@@ -1,20 +1,20 @@
 # data & outputs
-#data/
-#outputs/
+data/
+outputs/
 
 # python
-#.venv/
-#__pycache__/
-#*.pyc
+.venv/
+__pycache__/
+*.pyc
 
-# OS/editor
-#.vscode/
-#.DS_Store
+ OS/editor
+.vscode/
+.DS_Store
 
 # latex
-#latex/build/
-#latex/*.aux
-#latex/*.log
-#latex/*.fls
-#latex/*.fdb_latexmk
-#latex/*.synctex.gz
+latex/build/
+latex/*.aux
+latex/*.log
+latex/*.fls
+latex/*.fdb_latexmk
+latex/*.synctex.gz
