@@ -15,5 +15,8 @@
     "*.out",
     "*.synctex.gz",
     "*.toc"
-  ]
+  ],
+  "editor.formatOnSave": true,
+  "files.autoSave": "afterDelay",
+  "latex-workshop.formatting.latex": "latexindent"
 }

@@ -12,6 +12,8 @@
 \usepackage{enumitem}
 \usepackage{hyperref}
 \usepackage{xcolor}
+\usepackage{amssymb}
+\usepackage{amsmath}
 
 % ---------- Spacing ----------
 \onehalfspacing
@@ -42,7 +44,7 @@
 \newcommand{\keytakeaway}[1]{\par\smallskip\noindent\textbf{Key takeaway:} #1\par\smallskip}
 
 % ---------- Title info ----------
-\title{Paper Notes Template}
+\title{Household Capital Reallocation under Regulatory Cash-Flow Risk: Evidence from the France DPE Rental Ban} % TODO: update title
 \author{Your Name}
 \date{\today}
 
@@ -52,20 +54,98 @@
 % =========================
 \section{Research Question}
 % Tips: Why is it an important question? Do the authors truly address the stated research question? Is the chosen method appropriate for this question? Why or why not?
+How does state contingent contract enforcement implemented through a government payment rail alter investment, exit, and market reallocation decisions of small, undiversified asset owners?
+
+% =========================
+\section{Literature Review, Research Gap and Contribution}
+%\subsection{Corporate finance: private/entrepreneurial asset owners}
+
+%\subsection{Household finance}
 
 % =========================
 \section{Conceptual Level Theory}
 % Tips: Does it make sense or seem post hoc/convoluted?
+A policy doesn`t just “raise standards.” It re-writes the payout function: owners` cash flows become conditional on compliance because the state can suspend/sequester a payment stream. That introduces (i) downside risk, (ii) liquidity shocks, and (iii) a reduction in the continuation value of operating the asset—shifting choices among upgrade, sale, and market switching.
 
-    \subsection{What — Conceptual IV and DV}
-    % e.g., The paper examines how real estate price shocks affect corporate investment.
+I have question of how should I define IV and DV here. I think the IV is the policy change, but what is the DV? Is it investment, exit, or market reallocation? Or should I have multiple DVs? And how should I write out the mechanism? Since there are two policies at the same time, DPE rental ban and APL enforement, should I treat DPE treatment as the IV and APL enforcement as a mechanism? Or should I treat both as IVs? But also in order to avoid policy analyasis paper flavor, I shouldn`t use the word "treatment" or "policy" in the theory section. I should write it in a more abstract way, e.g., "a change in the payout function" or "a change in the contract enforcement regime.
 
-    \subsection{How — Mechanism}
-    % e.g., Higher property values increase firms’ collateral, easing borrowing constraints and enabling investment.
+\subsection{What — Conceptual IV and DV}
+% I'm not sure how much of the wordings below is conceptual vs empirical level.
+\subsubsection{Conceptual IV: Exposure to regulatory cash-flow risk}
+Exposure is the state-contingent haircut risk induced by the enforcement technology.In our setting, that exposure is naturally:
+\begin{itemize}
+    \item Noncompliance state: DPE class in the constrained set (F/G, or G at the relevant date)
+    \item Enforcement bite: APL/CAF intensity / likelihood of payment being sequestered
+    \item Time: post-enforcement/rollout window(s)
+\end{itemize}
 
-    \subsection{Why — Fundamental frictions or motivation}
-    % e.g., Because financial markets are imperfect — lenders rely on collateral to mitigate credit risk. Refer to file "fundamental frictions"
+So conceptually:
+$RegCashFlowRisk = (Noncompliance) \times (Enforcement bite)$
 
+\subsubsection{Conceptual DV: Three margins of the same underlying decision: continue operating vs reallocate capital}
+\begin{itemize}
+    \item Investment margin (upgrade hazard)
+    \item Exit margin (sale/ delist/ stop renewing)
+    \item Market switching margin (short-term rental listing/ vacancy)
+\end{itemize}
+
+If only indicate one primary DV, then it would be "capital reallocation choice", operationalized as upgrade vs sale. Keep market switching as secondary/ diagnostic. Keep prices as supporting evidence (risk capitalization), don't put in the headline.
+
+
+\subsection{How — Mechanism}
+% e.g., Higher property values increase firms’ collateral, easing borrowing constraints and enabling investment.
+Small rental properties are cash-flow assets operated by highly undiversified owners. Rental income finances maintenance, debt service, and consumption. When the state acquires the ability to suspend or sequester rental payments conditional on asset characteristics, the landlord's income stream becomes state-contingent and subject to enforcement risk.
+
+Small rental properties are cash-flow assets operated by highly undiversified owners. Rental income finances maintenance, debt service, and consumption. When the state acquires the ability to suspend or sequester rental payments conditional on asset characteristics, the landlord's income stream becomes state-contingent and subject to enforcement risk.
+
+The state's ability to sequester/withhold the rent-related payment stream (via APL/CAF) turns rental income into state-contingent cash flow. State-contingent cash flow is less pledgeable → borrowing constraints tighten exactly when owners need liquidity for capex (retrofit). Outcome is not “policy effect on housing.” It's how a regulatory state variable interacts with financing frictions to reallocate capital and ownership.
+
+
+This intervention changes the payoff structure in three ways:
+\begin{itemize}
+    \item Cash-flow volatility: Expected rental income becomes conditional on compliance, introducing downside risk.
+    \item Liquidity pressure: Payment suspension creates short-run liquidity shocks for owners with limited buffers.
+    \item Option value distortion: The continuation value of operating the asset declines relative to outside options (sale, alternative use, renovation).
+\end{itemize}
+
+Financing friction / pledgeability: Because small landlords fund both maintenance and consumption out of rental income, the ability of the state to sequester payments conditional on observable asset characteristics reduces the pledgeable component of cash flow. This tightens borrowing constraints exactly when owners need liquidity to finance compliance capex. As a result, identical compliance costs generate different responses depending on the owner's shadow cost of funds: constrained owners are pushed toward sale/exit and ownership reallocation, while less constrained owners are more likely to retrofit and continue operating. The same enforcement-induced cash-flow risk is therefore transmitted into asset values both directly (via expected cash-flow loss) and indirectly (via financing constraints and the cost of capital).
+
+Owners optimally respond along three margins:
+\begin{itemize}
+    \item Investment (upgrade): Internalize compliance cost to restore stable cash flow.
+    \item Exit (sale): Liquidate to reallocate capital to assets without enforcement exposure.
+    \item Market switching: Reallocate the asset to markets not subject to the same enforcement technology. (not central to the story, since it's just a policy loophole that makes the test possible)
+\end{itemize}
+
+Enforcement risk $\rightarrow$ cash flow risk $\rightarrow$ investment/exit/market switching responses.
+\begin{itemize}
+    \item Upgrade response (investment margin): Higher enforcement exposure $\rightarrow$ higher probability/timing of upgrading to regain stable cash flow
+    \item Exit resposnse (reallocation of ownership): Higher exposure $\rightarrow$ higher sale hazard and/or lower willingness to renew contracts; stronger discount in transaction prices where enforcement is salient
+    \item Market switching (reallocation of market share): Some owners reallocate the asset to an alternative market segment not covered by the enforcement technology (or delay/hold vacant). This shows escape option exists, but not main claim.
+    \item Heterogeneity: Effects are stronger for more liquidity constrained owners/assets and where enforcement probability is higher (counterparty mix, monitoring intensity).
+    \item Prices reflect enforcement risk: Asset prices capitalize the expected enforcement contingent cash-flow loss, over and above “quality” per se. Price discount should widen when enforcement becomes credible, and widen more in high-APL (high bite) areas.
+\end{itemize}
+
+The spine must is enforcement-induced cash-flow risk and capital reallocation. Angle 2 (multi-market switching) supports the story, but it is not the core. Angle 3 (price) is supporting evidence, not the main contribution.
+
+Enforcement mechanism creates heterogeneous cash-flow risk. Owners respond through upgrade or exit. Market reallocation is a secondary adjustment. Prices reflect enforcement exposure. % I'm not sure prices only serve as this evidence of the story.. They also have real implications for wealth effects and borrowing capacity, which could amplify the investment and exit responses. I should treat it carefully.
+
+
+\subsection{Why — Fundamental frictions or motivation}
+% e.g., Because financial markets are imperfect — lenders rely on collateral to mitigate credit risk. Refer to file "fundamental frictions"
+Limited commitment + liquidity constraints in retail ownership. Owners are undiversified and often buffer constrained; a payment suspension is a high-frequency liquidity shock rather than a low-frequency fine.
+
+% =========================
+\section{Institutional Setting}
+
+\subsection{DPE} % to be updated
+In France, a rental dwelling must meet an energy “decency” criterion or else tenants (or welfare agencies) can sanction the landlord.
+
+\subsection{Explain STR Escape Valve}
+Until recently, France`’'s climate law did not constrain short-term rentals – e.g. a “passoire thermique” could legally be rented to tourists since the decency standard applied only to primary residence leases. This created a loophole, potentially encouraging a shift from the regulated long-term market to the less regulated short-term market. The mechanism is that owners avoid costly renovations by switching use (from housing locals to hosting tourists), effectively an escape valve undermining the policy`s intent.
+
+\subsection{APL}
+Since 2023, the Caisse d`Allocations Familiales (CAF) can withhold housing allowance (APL) for F/G-rated rentals that remain non-compliant.
 % =========================
 \section{Stylized Facts}
 % Tips: Present the motivating patterns — the “what.”
@@ -74,58 +154,178 @@
 \section{Formal Model}
 % Tips: Builds the mechanism and generates predictions — the “how” and “why.”
 
-    \subsection{Setup}
+\subsection{Setup}
+Owner chooses upgrade (pay fixed cost k) or exit (sell). Let borrowing capacity satisfy:
 
-    \subsection{Key Assumptions}
+\[
+    B \leq \theta \mathbb{E}\left[ CF \mid \mathcal{E} \right]
+\]
 
-    \subsection{Solution Methodology}
+Enforcement risk lowers expected pledgeable cash flow and raises downside risk $\to$ effectively lowers ($\theta$) or the pledgeable PV.
 
-        \subsubsection{Equilibrium concept}
+\subsection{Key Assumptions}
+% Should I put this subsection under empirical design? Under what name? And how does it relate to the previous "key economic friction"?
 
-        \subsubsection{Numerical or analytical approach}
+Small landlords are liquidity constrained.
+% Can use institutional holders to motivate this assumption
 
-    \subsection{Main Results and Intuition}
+Enforcement exposure is plausibly exogenous conditional on controls.
 
-    \subsection{Predictions}
+F/G classification is predetermined relative to enforcement timing.
+
+No simultaneous policy confounds dribing exposure variation.
+
+\subsection{Solution Methodology}
+
+\subsubsection{Equilibrium concept}
+
+\subsubsection{Numerical or analytical approach}
+
+\subsection{Main Results and Intuition}
+
+\subsection{Predictions}
+When exposure rises, upgrade happens only for owners with slack/liquidity; constrained owners sell. Ownership reallocates toward lower cost-of-capital buyers.
 
 % =========================
 \section{Empirical Identification}
 % Tips: Tests whether the proposed mechanism holds — the test of “how.”
 
-    \subsection{Identification Challenge}
+\subsection{Identification Challenge}
+Measurement challenge
+% Categorize using the framework from internal validity, external validity, selection problem, an omitted variable problem, a reverse causality problem, or something else. Check the framework up
+Areas with more APL recipients might differ in unobservable ways (e.g. poorer housing quality, different landlord profiles) that also affect retrofit likelihood. To mitigate this, one can include rich fixed effects (e.g. building age, quality, owner type from BDNB) and possibly instrument enforcement intensity using something like historical policy (e.g. pre-policy APL density as an instrument for enforcement pressure).
 
-    \subsection{Methodology}
+We also assume landlords do respond to the APL incentive; if many ignore it (e.g. by renting informally off-lease), effects could be muted.
 
-        \subsubsection{Identification strategy}
+COVID-19 and tourism recovery could independently affect short-term rental trends.We’ll control for local tourism demand shocks and use non-passoire homes as controls.
 
-        \subsubsection{Data source and sample}
+For short-term rental data, if we can't get the lease registry data, the airbnb listing data may have selection issues (e.g. not all short-term rentals are listed, or some long-term rentals are misclassified). This could lead to underestimating arbitrage. We can validate this by cross-referencing with known short-term rental hotspots and checking for consistency.  % Even if we can have registration data, does it mean we can only have data post-2026?
 
-        \subsubsection{Measurement}
+House owners have different constraint intensity. We can test for heterogeneity by using proxies for financial constraints (e.g. owner type, building characteristics, local credit conditions) to see if the upgrade vs exit response varies as predicted.
 
-        \subsubsection{Fixed effects}
+\subsection{Methodology}
 
-    \subsection{Testable Predictions (link back to theory)}
+\subsubsection{Identification strategy}
+% Need to carefully decide the shock timeline
+This paper exploits heterogeneity in enforcement through tenant protections and the resulting variation in the probability of cash flow loss. Leverage variation in exposure to APL enforcement as an exogenous intensity of treatment. Note that CAF will withhold APL for F/G-rated units, which creates a strong incentive for landlords to upgrade to regain subsidy eligibility. This makes APL exposure a key source of variation in enforcement risk across properties.
 
-    \subsection{Estimation Specification}
+One approach is a difference-in-differences comparing high-APL neighborhoods vs. low-APL neighborhoods before and after the 2021–2022 policy rollout.  % This is when we still don't have access to the tenant-level data, so we have to use neighborhood-level APL exposure as a proxy for enforcement intensity. The key assumption is that, absent the policy, outcomes in high-APL and low-APL areas would have followed parallel trends. We can test this with pre-policy data and also use E-rated units as an internal control group since they are not subject to enforcement risk.
+
+The treatment kicks in August 2022 (rent freeze) and 2025 (ban for G), but the enforcement “bite” is sharper where many tenants receive APL (since CAF will refuse subsidy in indecent F/G units[1]). Thus, F/G-rated properties in high-APL areas form the treated group; F/G properties in low-APL areas (or E-rated properties as an internal control) serve as comparison. We expect post-policy outcomes (renovation rates, delistings, tenancy terminations) to improve more in high-APL areas if enforcement matters. A falsification test could use pre-policy trends or non-affected ratings (e.g. D-rated units) in those areas to ensure parallel trends.
+
+Another strategy is exploiting tenant turnover timing: when an APL-recipient tenant moves in or renews, compliance is checked, potentially forcing upgrades then. This creates an event-study around tenant turnover dates for F/G units, comparing outcomes to similar units without subsidy tenants. % This approach leverages the fact that enforcement risk is realized at tenant turnover, so we can test for spikes in renovation activity or delistings around those events, especially in high-APL areas. However, it requires detailed tenant-level data and careful control for selection into turnover events.
+
+
+\subsubsection{Data source and sample}
+Merging these by address or building ID: one can observe if high-subsidy locales see disproportionate reductions in F/G rentals.
+
+\paragraph{BDNB and DPE}
+BDNB provides the universe of buildings with unique IDs and energy ratings (and a lot of other databases to be named) and geolocation. % Be explicit about how BDNB has already merged all the databases together, so we can link building characteristics, energy ratings, and tenant subsidy status at the property level. This is a major advantage for our identification strategy.
+
+The DPE registry will identify F/G vs. better-rated units.
+
+\paragraph{CAF/APL data}
+CAF/APL microdata are crucial – ideally a dataset of addresses receiving housing benefits, or flags for payments suspended due to indecency.
+
+If individual-level data is inaccessible, proxies can be used: e.g. Insee localized statistics on share of households on APL by area, or the rent level (low rents correlate with APL usage).
+
+\paragraph{Rental market data}
+Additionally, rental market data (ads or lease registries) can track whether F/G units are being pulled off the market.
+
+
+\subsubsection{Measurement}
+
+\paragraph{Enforcement Exposure Measures:}
+Property-level APL receipt or CAF payment status
+% Direct measure of exposure to payment suspension risk, sharp enforcement heterogeneity, clean interpretation
+
+Neighborhood-level APL intensity
+% Easier to construct, still exogenous to building-level decisions in short run. But may proxy for poverty rather than enforcement
+
+Insitutional exposure proxies (e.g., local monitoring intensity, renewal timing distribution, urban vs rural enforcement differences)
+
+\paragraph{Investment Margin:}
+DPE upgrade (F/G → E or above)
+
+Timing of new DPE certificate
+
+Energy renovation proxy (major jump in energy class)
+
+Building simulation gap vs realized upgrade
+
+
+\paragraph{Exit Margin:}
+Sale hazard (DVF transaction)
+
+Time-to-sale
+
+Discount at sale (F/G vs comparable units)
+
+
+\paragraph{Reallocation Margin:}
+Switch to STR registration (if available)
+
+Increase in listing density in tourist markets
+
+Vacancy proxy (electricity usage if accessible, otherwise turnover gap)
+
+A key outcome is whether F/G units are being reallocated to the short-term rental market (e.g. listed on Airbnb) as an escape valve. This can be measured by cross-referencing the DPE registry with short-term rental listings. We track outcomes like: whether the property appears as a listing on Airbnb/VRBO (yes/no), or the number of nights rented. Or if we can get lease registry data, we can see if the unit is leased long-term vs. listed as a short-term rental.
+
+\paragraph{Price Margin:}
+Transaction price per $m^2$
+
+Price discount evolution over time
+
+Liquidity measures (days-on-market if you can proxy)
+
+\paragraph{Financial Constraint:}
+Small landlord indicators (portfolio size if you can infer; otherwise ownership type)
+
+Low-income tenant share proxies (already in your APL intensity construct)
+
+Property price level / local income (Insee-type area controls—already on your radar)
+
+Time since last transaction (recent buyers more levered on average; imperfect but often usable)
+
+Local credit conditions
+
+
+\subsubsection{Fixed effects}
+
+\subsection{Testable Predictions (link back to theory)}
+The mechanism posited is that landlords renting to low-income tenants (who rely on APL subsidies) face a harder enforcement threat – loss of rent payments – than those renting to higher-income tenants. This enforcement gap may drive differential compliance: landlords in markets with many subsidized tenants should be more likely to retrofit or exit (to avoid losing APL income), whereas in high-rent markets (few APL tenants) some F/G landlords might continue leasing undetected (relying on tenant silence and lack of proactive “policing”). The question is whether stronger enforcement at the tenant level translates into faster upgrades or market exit of sub-standard units, compared to areas or segments with weaker de facto enforcement.
+
+\subsection{Estimation Specification}
+% Before testing APL enforcement effects, first establish the baseline impact of the DPE policy on F/G units overall (e.g. using a simple pre-post or cross-sectional comparison). Then, to test the enforcement mechanism, estimate a difference-in-differences regression of the form
+
 
 % =========================
 \section{Main Results}
 % Tips: Do the results make sense given the theory and context?
 
-    \subsection{Key Findings}
+\subsection{Key Findings}
 
-    \subsection{Economic Magnitude}
+\subsection{Economic Magnitude}
 
 % =========================
 \section{Robustness \& Alternative Explanations}
 % Tips: Check whether the authors ruled out false positives and competing stories.
 
-    \subsection{Additional tests or specifications}
+\subsection{Additional tests or specifications}
+For the market transition story, we can leverage the closure of the “escape valve" to the short-term rental market due to a new law in 2024 that tightens this: in many areas, registering a meublé de tourisme now requires an energy label $\geq$ E (and $\geq$ D by 2034). Mayors can enforce fines on non-compliant tourist rentals. This yields a dynamic setting: initial arbitrage opportunities followed by a regulatory clampdown. For the 2024 tightening, we can exploit a policy discontinuity: the law applies in officially `'tense'' areas (e.g. big cities) starting Nov 2024, whereas outside those areas short-term rentals remain largely exempt. This allows a triple-diff: F/G vs E-rated homes, before vs after Nov 2024, in regulated cities vs in less-regulated locales. We expect that before 2024, F/G homes in cities saw higher conversion to Airbnb than E homes; after 2024 (when cities require $\geq$ E for tourist rentals), this gap should shrink in treated cities (where F/G can no longer arbitrage as easily) but not in unaffected towns.
 
-    \subsection{Alternative mechanisms considered}
+Prediction: higher RegCashFlowRisk $\to$ more exit vs upgrade for more constrained owners.
 
-    \subsection{Placebo or falsification tests}
+If we can identify institutional vs retail buyers in DVF-like transactions, we can get a clean finance angle: RegCashFlowRisk induces transfer from constrained retail owners to lower-cost-of-capital buyers. Even if we can't fully classify institutions, a “repeat buyer / multi-property buyer” proxy can go a long way.
 
-    \subsection{Sensitivity to sample or model changes}
+We can demonstrate that the enforcement regime creates a priced risk component, not just a micro behavior change, to show as an external validity test. We can do event-study around key policy information dates (not implementation dates), using: French banks'5Y CDS or senior bond spreads; Possibly real-estate-linked intermediaries if liquid enough. Or we can do a cross-sectional interaction, using bank exposure proxy $\times$ Post, or bank exposure proxy $\times$ APL intensity $\times$ Post
+
+\subsection{Alternative mechanisms considered}
+If we can proxy liquidity (days-on-market), we can get a second finance outcome: liquidity premium
+
+\subsection{Placebo or falsification tests}
+
+\subsection{Sensitivity to sample or model changes}
+
 
 \end{document}
